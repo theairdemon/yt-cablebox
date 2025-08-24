@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3vmj310ihqln"]
+
+[ext_resource type="Script" uid="uid://cn8kiw2emfecs" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dvo4ahm1r3t2m" path="res://Scenes/channel.tscn" id="2_bo1nx"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jjgbg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+custom_minimum_size = Vector2(1060, 500)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = 684.0
+offset_right = 1938.0
+offset_bottom = 1184.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.155968, 0.337123, 0.914157, 1)
+
+[node name="ChannelMenu" type="ScrollContainer" parent="."]
+offset_left = 20.0
+offset_top = 702.0
+offset_right = 1681.0
+offset_bottom = 939.0
+
+[node name="ChannelList" type="VBoxContainer" parent="ChannelMenu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Channel1" parent="ChannelMenu/ChannelList" instance=ExtResource("2_bo1nx")]
+layout_mode = 2
+
+[node name="Channel2" parent="ChannelMenu/ChannelList" instance=ExtResource("2_bo1nx")]
+layout_mode = 2
+
+[node name="Channel3" parent="ChannelMenu/ChannelList" instance=ExtResource("2_bo1nx")]
+layout_mode = 2
+
+[node name="WebView" type="WebView" parent="."]
+full_window_size = false
+autoplay = true
+offset_left = 152.0
+offset_top = 8.0
+offset_right = 1590.0
+offset_bottom = 674.0
